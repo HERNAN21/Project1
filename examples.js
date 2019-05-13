@@ -70,7 +70,8 @@ Primeros Pasos Git
 ->git clone ulr
 ->git add .  or git add file_name
 ->git status
-->git commit 
+->git diff
+->git commit -m "Coment"
 ->git push
 
 ->
