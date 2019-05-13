@@ -74,7 +74,13 @@ Primeros Pasos Git
 ->git commit -m "Coment"
 ->git push
 
+->git pull
+
+	->git push origin master 
+	->git remote add origin <server>
 ->
 
 
+
+	https://rogerdudler.github.io/git-guide/index.es.html
 */
