@@ -1,5 +1,8 @@
 $(document).ready(function() {
 
+
+	listado();
+
 	var data=[
 				{"id":"01","descripcion":"test1"},
 				{"id":"01","descripcion":"test1"},
@@ -43,7 +46,46 @@ $(document).ready(function() {
 		});
 	});
 
+
+
 });
+
+
+function listado() {
+	var listado_persona=[
+		{"id":1,'nombres':'Hernan1','apellido_p':'Rojas1','apellido_m':'Utani1'},
+		{"id":2,'nombres':'Hernan2','apellido_p':'Rojas2','apellido_m':'Utani2'},
+		{"id":3,'nombres':'Hernan3','apellido_p':'Rojas3','apellido_m':'Utani3'},
+		{"id":4,'nombres':'Hernan4','apellido_p':'Rojas4','apellido_m':'Utani4'},
+		{"id":5,'nombres':'Hernan5','apellido_p':'Rojas5','apellido_m':'Utani5'},
+		{"id":6,'nombres':'Hernan6','apellido_p':'Rojas6','apellido_m':'Utani6'},
+	];
+
+	var tbody=$('#listado tbody');
+	tbody.find('tr').remove();
+	$.each(listado_persona, function(i, listado) {
+		var tr="<tr>"+
+			"<td>"+(i+1)+"</td>"+
+			"<td>"+listado.nombres+"</td>"+
+			"<td>"+listado.apellido_p+"</td>"+
+			"<td>"+listado.apellido_m+"</td>"+
+			"<td>"+
+				"<button onclick='pasardatos(this);'>Seleccionar</button>"+
+			"</td>"+
+		"</tr>";
+		tbody.append(tr);
+	});
+	console.log(listado_persona);
+
+}
+
+
+
+
+
+
+
+
 
 
 function pasardatos(obj) {
@@ -58,6 +100,11 @@ function pasardatos(obj) {
 
 	$("#modal_id").hide(0);
 }
+
+
+
+
+
 
 
 
