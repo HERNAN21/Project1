@@ -75,14 +75,9 @@ function listado() {
 		"</tr>";
 		tbody.append(tr);
 	});
-	console.log(listado_persona);
+	// console.log(listado_persona);
 
 }
-
-
-
-
-
 
 
 
@@ -104,6 +99,112 @@ function pasardatos(obj) {
 
 
 
+const position = {
+		"positions":[
+			{
+				"id":1,
+				"position_name":"LIDER",
+				/*"dependency":[
+					{'id':0, 'dependency_name':'', 'quantity': 2},
+				],*/
+			},
+		    {
+		    	'id':2, 
+		    	'position_name':"CLIENTE_VIP",
+		    	/*"dependency":[
+		    		{'id':0, 'dependency_name':'', 'quantity': 4},
+		    	],*/
+			},
+		    {
+		    	'id':3, 
+		    	'position_name':"JADE",
+		    },
+		    {
+		    	'id':4, 
+		    	'position_name':"PERLA",
+			},
+		    {
+		    	'id':5, 
+		    	'position_name':"RUBI"
+			},
+		    {
+		    	'id':6, 
+		    	'position_name':"ESMERALDA",
+		    },
+		    {
+		    	'id':7, 
+		    	'position_name':"ZAFIRO",
+			},
+		    {
+		    	'id':8, 
+		    	'position_name':"DIRECTOR",
+		    },
+		    {
+		    	'id':9, 
+		    	'position_name':"SENIORT_DIRECTOR",
+			},
+		    {
+		    	'id':10, 
+		    	'position_name':"EXECUTIVE_DIRECTOR",
+			},
+		    {
+		    	'id':11, 
+		    	'position_name':"SENIOR_EXECUTIVE_DIRECTOR",
+		    },
+		    {
+		    	'id':12, 
+		    	'position_name':"DIAMOND_DIRECTOR",
+			},
+		    {
+		    	'id':13, 
+		    	'position_name':"PLATINUM_DIRECTOR",
+		    },
+		    {
+		    	'id':14, 
+		    	'position_name':"AMBASSADOR_DIRECTOR",
+		    },
+		],
+
+
+}
+
+
+var dependency={
+		"dependency":[
+			{ 'position_id':6, 'position_calif':5, 'quantity': 1 },
+			{ 'position_id':7, 'position_calif':5, 'quantity': 2 },
+			{ 'position_id':8, 'position_calif':5, 'quantity': 3 },
+			{ 'position_id':9, 'position_calif':5, 'quantity': 2 },
+			{ 'position_id':9, 'position_calif':8, 'quantity': 1 },
+			{ 'position_id':10, 'position_calif':5, 'quantity': 1 },
+			{ 'position_id':10, 'position_calif':8, 'quantity': 2 },
+			{ 'position_id':11, 'position_calif':5, 'quantity': 2 },
+			{ 'position_id':11, 'position_calif':8, 'quantity': 3 },
+		],
+}
+
+var pagado_como=0;
+var sumar=0;
+for (var i = 0; i < position.positions.length; i++) {
+	// console.log(position.positions[i].id)
+	if (position.positions[i].id==9) {
+		for (var d = 0; d < dependency.dependency.length; d++) {
+			// console.log(dependency.dependency[d]);
+			if (dependency.dependency[d].position_id==position.positions[i].id && dependency.dependency[d].quantity>=1) {
+				pagado_como=position.positions[i].id;
+				console.log(pagado_como);
+			}
+		}
+	}
+}
+
+// console.log(pagado_como);
+
+// console.log(position.positions);
+
+/*function licalif(id) {
+	
+}*/
 
 
 
